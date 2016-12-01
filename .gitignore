@@ -32,6 +32,8 @@
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
+/.idea/
+
 
 # PHPUnit
 /app/phpunit.xml
