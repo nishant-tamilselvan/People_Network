@@ -9,7 +9,7 @@ Symfony 3.1.7
 
 Install the bundle with composer:
 ```
- $composer require doctrine/doctrine-migrations-bundle "^1.0"
+ $ composer require doctrine/doctrine-migrations-bundle "^1.0"
 ```
 
 ### External Library used:
