@@ -1,0 +1,52 @@
+{% extends 'adminbase.html.twig' %}
+{% block body %}
+<style>
+
+    /* #login_wrapper {
+         margin-top: 80px;
+         margin-bottom: 80px;
+         height: auto;
+     }*/
+
+</style>
+
+<div class="container ">
+    <div class="col-md-6 col-md-offset-3"  >
+        <h2 style="text-align: center">Admin login Page!</h2>
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        {{ form_start(form,{'method': 'post'},{'attr': {'class': 'form-horizontal'}}) }}
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="email">Email:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form._username,{'attr': {'class': 'form-control','placeholder': 'Enter email','required':'required'}} ) }}
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-3" for="pwd">Password:</label>
+            <div class="col-sm-9">
+                {{ form_widget(form._password,{'attr': {'class': 'form-control','placeholder': 'Enter password','required':'required'}} ) }}
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default">login</button>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}
