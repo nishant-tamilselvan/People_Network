@@ -27,7 +27,7 @@ class AdminController extends Controller
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/dashboard", name="admin_dashboard")
+     * @Route("/dashboard", name="adminDashboard")
      */
     public function adminDashAction(Request $request)
     {

@@ -1,0 +1,100 @@
+#left-sidebar{
+    background:#e7e7e7 ;
+    height: 100%;
+    display: block;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+#right-sidebar{
+    background:#e7e7e7 ;
+    height: 100%;
+    display: block;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    text-align: center;
+}
+.gender-selector input{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+.gender-selector input:active +.gender-cc{color: #0f86ce}
+.gender-selector input:checked +.gender-cc{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+    color: #0f86ce
+}
+.gender-cc{
+    cursor:pointer;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    color: #8c8c8c;
+    padding: 10px;
+
+}
+.gender-cc:hover{
+   color: #0f0f0f;
+}
+
+#graphHeader{
+    color: #b94a48;
+}
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+/*sidebar*/
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+#teamimg{
+    text-align: center;
+}
+
+#teamRoleImg{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+#teamRoleHeader{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#teamRoleContent{
+    font-size: 15px;
+    font-weight: 400;
+}
+#teamRole{
+    text-align: center;
+}
+#name{
+    color: #0f86ce;
+}
