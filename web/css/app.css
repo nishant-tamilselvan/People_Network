@@ -13,6 +13,7 @@ body {
     -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
     text-align: center;
+    z-index: 1;
 }
 
 #right-sidebar{
@@ -24,32 +25,26 @@ body {
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
     text-align: center;
 }
-.gender-selector input{
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
+.gender-selector{
+   padding: 10px 10px;
 }
 
-.gender-selector input:active +.gender-cc{color: #0f86ce}
-.gender-selector input:checked +.gender-cc{
-    -webkit-filter: none;
-    -moz-filter: none;
-    filter: none;
-    color: #0f86ce
+#female{
+    color: red;
+    padding-right: 10px;
 }
-.gender-cc{
-    cursor:pointer;
-    -webkit-transition: all 100ms ease-in;
-    -moz-transition: all 100ms ease-in;
-    transition: all 100ms ease-in;
-    color: #8c8c8c;
-    padding: 10px;
-
-}
-.gender-cc:hover{
-   color: #0f0f0f;
+#male{
+    color: green;
+    padding-left: 10px;
 }
 
+#country1{
+    color: blue;
+
+}
+#country2{
+    color: orange;
+}
 #graphHeader{
     color: #b94a48;
 }
@@ -144,4 +139,122 @@ hr.style-four {
     margin-top: 4px;
     margin-left: -17px;
     color: #CCCCCC;
+}
+
+/*d3*/
+.link {
+    /*  stroke: #000;*/
+    stroke: gray;
+}
+
+.node {
+    /*  stroke: #fff;*/
+    stroke: white;
+    fill: black;
+}
+
+#graphHolder{
+    position: relative;
+    right: 30%;
+}
+
+#slider {
+    width: 100%;
+    /*width: window.innerWidth;*/
+    margin: 20px;
+}
+.d3-slider {
+    position: relative;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+    border: 1px solid #aaaaaa;
+    z-index: 2;
+}
+
+.d3-slider-horizontal {
+    height: .8em;
+}
+/* didn't use*/
+.d3-slider-vertical {
+    width: 20px;
+    height: 100px;
+}
+
+.d3-slider-handle {
+    position: absolute;
+    /*position: relative;*/
+    width: 0.3em;
+    height: 1.0em;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    background: #eee;
+    background: linear-gradient(to bottom, #eee 0%, #ddd 100%);
+    z-index: 3;
+    /*stroke-linecap:;*/
+}
+
+.d3-slider-handle:hover {
+
+    border: 1px solid #999999;
+    z-index: 3
+}
+
+.d3-slide-handle-text {
+    position: relative;
+    fill:black;
+    /*text-align:top;*/
+    font-size:10px;
+    top: -2em;
+    left: -2em;
+
+
+}
+
+.d3-slider-horizontal .d3-slider-handle {
+    /* set the position of handle*/
+    top: -0.2em;
+    margin-left: -0.2em;
+}
+
+.d3-slider-axis {
+    position: absolute;
+    /*position: relative;*/
+    z-index: 1;
+}
+
+.d3-slider-axis-bottom {
+    /* the value here the same as the height of .d3-slider-horizontal */
+    top: 0.8em;
+}
+
+.d3-slider-axis-right {
+    /* didn't use*/
+    left: 0.8em;
+}
+
+.d3-slider-axis path {
+    stroke-width: 0;
+    fill: none;
+}
+
+.d3-slider-axis line {
+    fill: none;
+    stroke: #aaa;
+    shape-rendering: crispEdges;
+}
+
+.d3-slider-axis text {
+    font-size: 11px;
+}
+
+.d3-slider-vertical .d3-slider-handle {
+    /* didn't use */
+    left: -.25em;
+    margin-left: 0;
+    margin-bottom: -.6em;
+}
+#d3Box{
+    padding: 30px;
+    position: relative;
+
 }

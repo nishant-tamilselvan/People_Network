@@ -9,9 +9,9 @@
         $( function() {
             $( "#slider-range" ).slider({
                 range: true,
-                min: 0,
-                max: 100,
-                values: [ 25, 60 ],
+                min: 1850,
+                max: 1990,
+                values: [ 1960, 1990 ],
                 slide: function( event, ui ) {
                     $( "#amount" ).val(  " "+ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                 }
@@ -29,55 +29,65 @@
                 <h3>Graph Filters</h3>
                 <div style="padding: 10px 10px" id="scope">
                     <div class="row">
-                        <p id="graphHeader">SCOPE</p>
-                        <div class="form-group">
-                           <input style="text-align: center" type="text" class="form-control" readonly value="Politicians">
-                        </div>
+                        <p id="graphHeader">SCOPE : Politicians</p>
                     </div>
                 </div>
-                <hr class="style-four">
-                    <div id="gender">
-                        <div class="row">
-                            <p id="graphHeader">GENDER</p>
-                            <div class="form-group">
-                                <div class="gender-selector">
-                                    <input  id="female" type="checkbox" name="gender" value="female" />
-                                    <label class="gender-cc" for="female"><i class="fa fa-female fa-3x" aria-hidden="true"></i> <br>Female
-                                    </label>
-                                    <input  id="male" type="checkbox" name="gender" value="male" />
-                                    <label class="gender-cc "for="male"><i class="fa fa-male fa-3x" aria-hidden="true"></i><br> Male</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <hr class="style-four">
-                <div id="age">
-                    <div style="padding: 5px" class="row">
-                        <p id="graphHeader">AGE</p>
-                        <div class="form-group">
-                        <label for="amount">Age range:</label>
-                        <input  type="text" id="amount" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;">
-                        </div>
-                        <div  id="slider-range"></div>
-                    </div>
-                </div>
-                <hr class="style-four">
                 <div id="countries">
                     <div style="padding: 5px" class="row">
-                        <p id="graphHeader">COUNTRY</p>
+                        <p id="graphHeader">COUNTRY-1</p>
                         <div class="form-group">
                             <select class="form-control"  id="countriesList"></select>
                         </div>
+                        <p id="graphHeader">COUNTRY-2</p>
+                        <div class="form-group">
+                            <select class="form-control"  id="countriesList2"></select>
+                        </div>
+
+                    </div>
+                </div>
+                <hr class="style-four">
+                <p id="graphHeader">COLOR PALETTE</p>
+
+                            <div id="colorPalette" data-toggle="buttons">
+                                <label class="btn btn-block btn-default ">
+                                    <input type="radio" value="0" name="coloroptions" id="option1" autocomplete="off" > Gender
+                                </label>
+                                <div  class="gender-selector">
+                                    <i id="female" class=" fa fa-female fa-2x"></i>
+                                    <i id="male" class="fa fa-male fa-2x"></i>
+                                </div>
+                                <label class="btn btn-block btn-default active">
+                                    <input type="radio"  value="1" name="coloroptions" id="option2" autocomplete="off" aria-selected="true" checked> Nationality
+                                </label>
+                                <div class="nationality-selector radio">
+                                    <i id="country1" class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;Country - 1<br>
+                                    <i id="country2" class="fa fa-globe fa-2x"></i>&nbsp;&nbsp;Country - 2
+                                </div>
+
+                            </div>
+
+                <hr class="style-four">
+                <div id="age">
+                    <div style="padding: 10px; padding-bottom: 20px" class="row">
+                        <p id="graphHeader">Year Of Birth</p>
+                        <div class="form-group">
+                        <label for="amount">range:</label>
+                        <input  type="text" id="amount" readonly style=" width: 100px; border:0; color:#0f86ce; font-weight:bold;">
+                        </div>
                         <div  id="slider-range"></div>
                     </div>
                 </div>
+
+
             </div>
             <div class='col-md-7 main'>
-                <h2>Main Content Section</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.<p>
-
-                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-            </div>
+                <div id="d3Box">
+                    <div  id="graphHolder"></div>
+                    <div id="sliderHolder">
+                        <div id="slider"></div>
+                    </div>
+                </div>
+                </div>
             <div id="right-sidebar" class='col-md-3 sidebar'>
                 <h3>Stats Report</h3>
                 <div style="padding: 5px" class="row">
