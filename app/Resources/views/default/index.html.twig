@@ -6,19 +6,7 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        $( function() {
-            $( "#slider-range" ).slider({
-                range: true,
-                min: 1850,
-                max: 1990,
-                values: [ 1960, 1990 ],
-                slide: function( event, ui ) {
-                    $( "#amount" ).val(  " "+ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                }
-            });
-            $( "#amount" ).val(  " "+$( "#slider-range" ).slider( "values", 0 ) +
-                " - " + $( "#slider-range" ).slider( "values", 1 ) );
-        } );
+
     </script>
 {% endblock %}
 
@@ -89,28 +77,80 @@
                 </div>
                 </div>
             <div id="right-sidebar" class='col-md-3 sidebar'>
-                <h3>Stats Report</h3>
-                <div style="padding: 5px" class="row">
-                    <p id="graphHeader">STAT - 1</p>
-
-                   <img class="img-responsive" src="{{ asset('img/plot1.png') }}">
-                </div>
+                <h3>Graph Stats</h3>
                 <hr class="style-four">
                 <div style="padding: 5px" class="row">
-                    <p id="graphHeader">STAT - 2</p>
+                    <p id="graphHeader">Country - 1</p>
+                    <div class="form-group">
+                        <label style="padding-bottom: 2px" for="noOfMale1">Male : &nbsp;&nbsp;</label>
+                        <input  type="text" id="noOfMale1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="noOfFemale1">Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="noOfFemale1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;">
+                        <label  style="padding-bottom: 2px" for="GACM1">Gobal Avg Centrality Male :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GACM1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GACF1">Gobal Avg Centrality Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GACF1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GAKCM1">Gobal Avg K-core Male :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GAKCM1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GAKCF1">Gobal Avg K-core Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GAKCF1" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;">
+                    </div>
 
-                    <img class="img-responsive" src="{{ asset('img/plot2.png') }}">
+
                 </div>
                 <hr class="style-four">
-                <div style="padding: 5px; text-align: center" class="row">
-                    <p id="graphHeader">STAT - 3</p>
-
-                    <img  class="img-responsive" src="{{ asset('img/plot1.png') }}">
+                <div style="padding: 5px" class="row">
+                    <p id="graphHeader">Country - 2</p>
+                    <div class="form-group">
+                        <label  style="padding-bottom: 2px" for="noOfMale2">Male : &nbsp;&nbsp;</label>
+                        <input  type="text" id="noOfMale2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="noOfFemale2">Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="noOfFemale2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;">
+                        <label  style="padding-bottom: 2px" for="GACM2">Gobal Avg Centrality Male :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GACM2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GACF2">Gobal Avg Centrality Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GACF2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GAKCM2">Gobal Avg K-core Male :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GAKCM2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;"><br>
+                        <label  style="padding-bottom: 2px" for="GAKCF2">Gobal Avg K-core Female :&nbsp;&nbsp;</label>
+                        <input  type="text" id="GAKCF2" readonly style=" width: 60px; border:0; color:#0f86ce; font-weight:bold;">
+                    </div>
                 </div>
                 <hr class="style-four">
+                <div class="form-group">
+                    <label  style="padding-bottom: 2px" style="color: #0f86ce" for="linkbtwc1c2">No of Cross links between Country-1 & Country-2 : &nbsp;&nbsp;</label>
+                    <input  type="text" id="linkbtwc1c2" readonly style=" width: 60px; border:0; color:firebrick; font-weight:bold;"><br>
+                </div>
+
 
 
             </div>
+        </div>
+    </div>
+        <hr class="style-four">
+    <div class="container">
+        </u></strong><h2 style="text-align: center; color: #2b669a">Global Stats</h2></u></strong>
+
+        <div id="globalstats" class="row">
+            <strong><u><h3>Number of Females & Males</h3></u></strong>
+            <img width="100%" class="img-responsive" src="{{ asset('img/NumberofFemales&Males.png') }}">
+            <hr class="style-four">
+
+            <strong><u><h3>Gender Homophily</h3></u></strong>
+            <img width="100%" class="img-responsive" src="{{ asset('img/Homophily1.png') }}">
+            <img width="100%" class="img-responsive" src="{{ asset('img/Homophily2.png') }}">
+            <hr class="style-four">
+            <strong><u><h3>Average K-Core</h3></u></strong>
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageKcoreSimple.png') }}">
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageKcoreErrorbars.png') }}">
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageKcoreBarchart.png') }}">
+            <hr class="style-four">
+            <strong><u><h3>Average Indegree</h3></u></strong>
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageIndegreeSimple.png') }}">
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageIndegreeErrorbars.png') }}">
+            <img width="100%" class="img-responsive" src="{{ asset('img/AverageIndegreeBarchart.png') }}">
+            <hr class="style-four">
+
         </div>
     </div>
 

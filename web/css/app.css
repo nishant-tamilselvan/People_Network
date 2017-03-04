@@ -30,20 +30,20 @@ body {
 }
 
 #female{
-    color: red;
+    color: #FF7F09;
     padding-right: 10px;
 }
 #male{
-    color: green;
+    color: #184BFF;
     padding-left: 10px;
 }
 
 #country1{
-    color: blue;
+    color: #A10017;
 
 }
 #country2{
-    color: orange;
+    color: #009111;
 }
 #graphHeader{
     color: #b94a48;
@@ -256,5 +256,14 @@ hr.style-four {
 #d3Box{
     padding: 30px;
     position: relative;
+
+}
+
+#globalstats{
+    padding: 20px 40px;
+}
+
+div.loadingoverlay{
+    margin-left: 12.5%;
 
 }
